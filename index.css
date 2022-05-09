@@ -1,0 +1,137 @@
+body {
+    display: flex;
+    padding-top: 200px;
+    position: relative;
+    flex-direction: row-reverse;
+    justify-content: center;
+    margin: 0 auto;
+    overflow-y: hidden;
+}
+
+.panel {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    bottom: -450px;
+    width: 100%;
+    height: 400px;
+    background-color: rgba(0,0,0, 0.1);
+    transition: ease-in 0.3s;
+}
+.top {
+    bottom: 0;
+}
+.open {
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    border-radius: 50px;
+    right: 10px;
+    top: 40vh;
+    color: white;
+    background-color: blue;
+}
+.keyboard {
+    display: flex;
+    width: 1050px;
+    height: 380px;
+    padding: 10px;
+    align-content: space-between;
+    justify-content: space-between;
+    background-color: rgba(0,0,0, 0.5);
+    flex-wrap: wrap;
+    column-gap: 10px;
+}
+.btn {
+    position: relative;
+    height: 60px;
+    text-align: center;
+    border: 3px solid #c6c3c3;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.btn:hover {
+    box-shadow: 0px 1px 1px rgba(255,255,255,0.8) inset,
+    1px 1px 5px rgba(0,0,0,0.4);
+}
+.btn:active {
+    position: relative;
+    top: 1px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4) inset;
+    background-color: blue;
+    transform: scale(0.9);
+    transition: ease-in-out 0.03ms;
+}
+.btn:nth-child(1){
+    background-color: yellow;
+}
+.btn:nth-child(14){
+    background-color: yellow;
+}
+.btn:nth-child(15){
+    background-color: yellow;
+}
+.btn:nth-child(28){
+    background-color: yellow;
+}
+.btn:nth-child(29){
+    background-color: yellow;
+}
+.btn:nth-child(41){
+    background-color: yellow;
+}
+.btn:nth-child(42){
+    background-color: yellow;
+}
+.btn:nth-child(54){
+    background-color: yellow;
+}
+.btn:nth-child(55){
+    background-color: yellow;
+}
+.btn:nth-child(56){
+    background-color: yellow;
+}
+.btn:nth-child(57){
+    background-color: yellow;
+}
+.btn:nth-child(58){
+    background-color: yellow;
+}
+.btn:nth-child(60){
+    background-color: yellow;
+}
+.btn:nth-child(61){
+    background-color: yellow;
+}
+.btn:nth-child(62){
+    background-color: yellow;
+}
+.btn:nth-child(63){
+    background-color: yellow;
+}
+.btn:nth-child(64){
+    background-color: yellow;
+}
+.active {
+    background-color: blue;
+}
+.quad {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    height: 10px;
+    width: 10px;
+    background-color: red;
+    border-radius: 50px;
+}
+.info {
+    position: absolute;
+    text-align: center;
+    top: 0;
+    left: 0;
+    width: 450px;
+    height: 250px;
+    background-color: bisque;
+}
+

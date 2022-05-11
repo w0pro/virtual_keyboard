@@ -839,6 +839,11 @@ const storage = () => {
     localStorage.setItem('key', lang);
 };
 
+
+function focus() {
+    text.focus();
+}
+
 // Методы клавиатуры
 const methods = {
     backspace(a) {
@@ -856,6 +861,7 @@ const methods = {
         storage();
     },
     enter(a) {
+        text += '\n'
     },
     capslock(a) {
         if (caps) {
@@ -885,10 +891,10 @@ function createBtn(data) {
             const atr = btn.getAttribute('data');
             if (atr === 'Backspace') {
                 methods[`${atr}`.toLowerCase()](text);
-                textarea.innerText = text;
+                textarea.value = text;
             } else if (atr === 'Tab') {
                 methods[`${atr}`.toLowerCase()](text);
-                textarea.innerText = text;
+                textarea.value = text;
             } else if (atr === 'MetaLeft') {
                 keyboard.innerHTML = '';
                 lang = !lang;
@@ -898,21 +904,21 @@ function createBtn(data) {
                 methods[`${atr}`.toLowerCase()](btn);
             } else if (atr === 'Enter') {
                 methods[`${atr}`.toLowerCase()](text);
-                textarea.innerText = text;
+                textarea.value = text;
             } else if (atr === 'Space') {
                 methods[`${atr}`.toLowerCase()](text);
-                textarea.innerText = text;
+                textarea.value = text;
             } else if (atr === 'ControlLeft' || atr === 'ControlRight' || atr === 'AltLeft' || atr === 'ShiftLeft'
                 || atr === 'ShiftRight' || atr === 'AltRight' || atr === 'NumpadDecimal') {
                 text += '';
-                textarea.innerText = text;
+                textarea.value = text;
             } else if (caps === false) {
                 text += data[i].key.toLowerCase();
-                textarea.innerText = text;
+                textarea.value = text;
             } else if (caps === true) {
                 btn.style.backgroundColor = 'red';
                 text += data[i].key.toUpperCase();
-                textarea.innerText = text;
+                textarea.value = text;
             }
 
             document.querySelectorAll('.btn').forEach((e) => {
@@ -928,7 +934,7 @@ window.addEventListener('keydown', (event) => {
     if (event.key !== 'Backspace' && event.key !== 'Tab' && event.key !== 'CapsLock' && event.key !== 'Shift'
         && event.key !== 'Control' && event.key !== 'Alt' && event.key !== 'Meta') {
         text += event.key.toLowerCase();
-        textarea.innerText = text;
+        textarea.value = text;
     }
     if (!document.querySelector('.btn[data ="'+ event.code +'"]')) {
         return
